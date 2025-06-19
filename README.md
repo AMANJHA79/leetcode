@@ -18,5 +18,6 @@ A collection of LeetCode questions to ace the coding interview!
 ## Math
 |  |
 | ------- |
+| [0007-reverse-integer](https://github.com/AMANJHA79/leetcode/tree/master/0007-reverse-integer) |
 | [2608-count-the-digits-that-divide-a-number](https://github.com/AMANJHA79/leetcode/tree/master/2608-count-the-digits-that-divide-a-number) |
 <!---LeetCode Topics End-->
