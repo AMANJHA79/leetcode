@@ -1,19 +1,21 @@
 class Solution {
 public:
     int reverse(int x) {
-        int revNum = 0;
-
-        while (x != 0) {
-            int ld = x % 10;
-
-            
-            if (revNum > INT_MAX / 10 || (revNum == INT_MAX / 10 && ld > 7)) return 0;
-            if (revNum < INT_MIN / 10 || (revNum == INT_MIN / 10 && ld < -8)) return 0;
-
-            revNum = revNum * 10 + ld;
-            x = x / 10;
+        int rem=0;
+        while(x!=0){
+        //  error
+if(x>0 &&rem>(pow(2,31)-1)/10){
+return 0;
+}
+   if(x<0 && rem<pow(-2,31)/10){
+                return 0;
+                }
+            rem=rem*10+x%10;
+            x=x/10;
         }
+           
+        
+return rem;
 
-        return revNum;
     }
 };
