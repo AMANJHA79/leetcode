@@ -1,24 +1,19 @@
 class Solution {
 public:
     bool isPalindrome(string s) {
-        string filtered;
-        for (char c : s) {
-            if (isalnum(c)) {
-                filtered += tolower(c);
-            }
-        }
+        return check(s, 0, s.length() - 1);
+    }
 
-        int left = 0;
-        int right = filtered.size() - 1;
+private:
+    bool check(const string& s, int left, int right) {
 
-        while (left < right) {
-            if (filtered[left] != filtered[right]) {
-                return false;
-            }
-            left++;
-            right--;
-        }
+        if (left >= right) return true;
 
-        return true;        
+        if (!isalnum(s[left])) return check(s, left + 1, right);
+        if (!isalnum(s[right])) return check(s, left, right - 1);
+
+        if (tolower(s[left]) != tolower(s[right])) return false;
+
+        return check(s, left + 1, right - 1);
     }
 };
